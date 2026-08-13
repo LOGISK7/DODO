@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import "./tokens.css";
+@import "../public/fonts/fonts.css";
+
+@theme {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-dark: var(--dark);
+  --color-dark-2: var(--dark-2);
+  --color-dark-line: var(--dark-line);
+  --color-gold: var(--gold);
+  --color-gold-ink: var(--gold-ink);
+  --color-gold-cta: var(--gold-cta);
+  --color-gold-soft: var(--gold-soft);
+  --color-pos: var(--pos);
+  --color-neg: var(--neg);
+
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-96: 96px;
+  --spacing-112: 112px;
+  --spacing-144: 144px;
+
+  --font-arabic: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+  --font-sans: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-arabic);
+  }
+}

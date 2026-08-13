@@ -1,0 +1,74 @@
+:root {
+  --canvas: #F7F7F5;
+  --surface: #FFFFFF;
+  --surface-raised: #FCFBFA;
+  --ink: #111318;
+  --ink-2: #3A3D44;
+  --muted: #777A80;
+  --line: #E4E2DD;
+  --dark: #0B0D10;
+  --dark-2: #14171C;
+  --dark-line: rgba(255, 255, 255, 0.13);
+  --gold: #C9A86A;
+  --gold-ink: #8A6D33;
+  --gold-cta: #B08D4F;
+  --gold-soft: #F1E9DA;
+  --pos: #3F7D5B;
+  --neg: #B4554B;
+
+  --r-sm: 10px;
+  --r-lg: 14px;
+  --maxw: 1080px;
+  --narrow: 760px;
+}
+
+/* Typography Scale */
+.text-h1 {
+  font-weight: 700;
+  font-size: clamp(31px, 4.9vw, 57px);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+}
+
+.text-h2 {
+  font-weight: 700;
+  font-size: clamp(26px, 3.5vw, 40px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.text-h3 {
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.text-lead {
+  font-weight: 400;
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.75;
+}
+
+.text-body {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.text-small {
+  font-weight: 400;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.text-eyebrow {
+  font-weight: 600;
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
