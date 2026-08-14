@@ -62,15 +62,15 @@ export function BuyBox() {
       </div>
 
       {/* Price Display */}
-      <div className="flex flex-col mb-[12px] min-h-[90px] justify-start">
-        <div className="text-[clamp(30px,4.4vw,46px)] font-[700] text-[var(--ink)] num leading-[1.2]">
-          {isAnnual ? formatDZD(PRICE_ANNUAL) : formatDZD(PRICE_MONTHLY)}
-          <span className="text-[17px] text-[var(--muted)] font-[400] ms-[8px]">
-            {isAnnual ? "/ سنة" : "/ شهر"}
-          </span>
+      <div className="flex flex-col mb-[16px] min-h-[130px] justify-start items-center">
+        <div className="text-[19px] text-[var(--muted)] font-[600] line-through decoration-[var(--neg)] decoration-2 mb-[4px]">
+          {isAnnual ? formatDZD(PRICE_ANNUAL * 3) : formatDZD(PRICE_MONTHLY * 3)}
         </div>
-        <div className={`text-[14.5px] text-[var(--gold-ink)] font-[600] mt-[4px] ${isAnnual ? "visible" : "invisible"}`}>
-          {offer.buyBox.annualSub}
+        <div className="text-[clamp(34px,5vw,52px)] font-[700] text-[var(--ink)] num leading-[1.1]">
+          {isAnnual ? formatDZD(PRICE_ANNUAL) : formatDZD(PRICE_MONTHLY)}
+        </div>
+        <div className="text-[16px] text-[var(--ink)] font-[700] bg-[var(--gold)] px-[12px] py-[4px] rounded-[var(--r-sm)] mt-[8px]">
+          وفر {isAnnual ? formatDZD(PRICE_ANNUAL * 2) : formatDZD(PRICE_MONTHLY * 2)} (66%)
         </div>
       </div>
 

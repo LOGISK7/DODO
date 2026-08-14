@@ -7,6 +7,13 @@ Read this file before writing any component in `components/sales/`.
 - Numbers: Latin digits, space thousands separator (6 900 / 59 000 / 18 750). Currency: دج AFTER the number.
 - Never put an Arabic string inside JSX. All copy imports from `content/ar.ts`.
 
+### Arabic typography (never violate)
+- NEVER apply `letter-spacing` to Arabic text. Not negative, not positive. Arabic is a connected script and
+  letter-spacing breaks the glyph joins. Any letter-spacing other than 0 on Arabic text is a bug.
+- letter-spacing is allowed ONLY on Latin-only strings ("TEST #024", "NEXT TEST", "AdLoop").
+- NEVER apply `text-transform: uppercase` to a mixed Arabic+Latin string. Wrap only the Latin substring.
+- Arabic headlines use `text-wrap: balance` where supported.
+
 ## RTL (highest priority rule)
 - Logical CSS only. FORBIDDEN: left, right, ml-, mr-, pl-, pr-, text-left, text-right, border-l, border-r.
 - REQUIRED: ms-, me-, ps-, pe-, start-, end-, text-start, text-end, border-s, border-e.
@@ -17,16 +24,17 @@ Read this file before writing any component in `components/sales/`.
 - Gold (`--gold`) is for hairlines, one button fill, and large display accents only.
 - Never gold on text under 20px. Never a gold background section. For small gold text use `--gold-ink`.
 
-## Forbidden visuals
-- No gradients. No glassmorphism. No purple. No blur except the nav.
-- No shadows at all in `components/sales/`. The one allowed shadow lives in the homepage hero only.
-- No icon libraries. No emoji in UI. No stock photography. No AI-generated faces.
-- No rounded corners above 14px except pill chips (999px).
+## Visuals (Direct Response Aesthetic)
+- USE heavy gradients and dark themes (navy/black backgrounds).
+- USE strong drop-shadows on cards and buttons.
+- Gold and Red are primary highlight colors.
+- Rounded corners should be minimal to look authoritative.
 
-## Forbidden persuasion patterns
-- No countdown timers. No fake scarcity. No crossed-out fake prices.
-- No "total value" line. No currency value next to a bonus. Ever.
-- No exit popups. No modals. No interstitials. No auto-playing video or audio.
+## Persuasion Patterns (Required)
+- ALWAYS use crossed-out original prices to anchor value (e.g., $15,000 crossed out).
+- ALWAYS include a "You Save [X]" badge or line.
+- Value stacks are required for bonuses.
+- CTAs should be massive, bold, and high-contrast (Gold/Red).
 
 ## Placeholders
 - Every unverified number, quote, testimonial, photo, or seat count MUST render through `<Placeholder>` and display a visible `[XX]`.

@@ -1,25 +1,25 @@
 :root {
-  --canvas: #F7F7F5;
-  --surface: #FFFFFF;
-  --surface-raised: #FCFBFA;
-  --ink: #111318;
-  --ink-2: #3A3D44;
-  --muted: #777A80;
-  --line: #E4E2DD;
-  --dark: #0B0D10;
-  --dark-2: #14171C;
-  --dark-line: rgba(255, 255, 255, 0.13);
-  --gold: #C9A86A;
-  --gold-ink: #8A6D33;
-  --gold-cta: #B08D4F;
-  --gold-soft: #F1E9DA;
+  --canvas: #0b1320;
+  --surface: #152238;
+  --surface-raised: #1e3050;
+  --ink: #FFFFFF;
+  --ink-2: #CCCCCC;
+  --muted: #8892b0;
+  --line: #2a3b5c;
+  --dark: #000000;
+  --dark-2: #111111;
+  --dark-line: rgba(255, 255, 255, 0.1);
+  --gold: #c08a3e;
+  --gold-ink: #c08a3e;
+  --gold-cta: #e3a34a;
+  --gold-soft: rgba(192, 138, 62, 0.15);
   --pos: #3F7D5B;
-  --neg: #B4554B;
+  --neg: #d32f2f;
 
-  --r-sm: 10px;
-  --r-lg: 14px;
-  --maxw: 1080px;
-  --narrow: 760px;
+  --r-sm: 4px;
+  --r-lg: 8px;
+  --maxw: 1200px;
+  --narrow: 800px;
 }
 
 /* Typography Scale */

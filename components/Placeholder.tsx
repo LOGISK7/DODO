@@ -23,7 +23,7 @@ export function Placeholder({ id, value = "XX", className = "" }: PlaceholderPro
   return (
     <span
       data-placeholder-id={id}
-      className={`inline-flex items-center justify-center bg-[var(--gold-soft)] text-[var(--gold-ink)] border border-dashed border-[var(--gold-ink)] px-2 py-0.5 rounded-[var(--r-sm)] font-bold ${className}`}
+      className={`inline-flex items-center justify-center bg-[var(--surface-raised)] text-[var(--muted)] text-[14.5px] border border-dashed border-[var(--line)] px-2 py-0.5 rounded-[var(--r-sm)] font-bold ${className}`}
       dir="ltr"
     >
       [{value}]
