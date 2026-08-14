@@ -1,4 +1,11 @@
 # AdLoop /offer — Build Rules
+
+## /offer visual exception
+The /offer route uses a high-contrast dark direct-response design.
+The "## Color" and "## Forbidden visuals" sections of this file do
+NOT apply to /offer. The "## RTL" and "### Arabic typography"
+sections DO apply to /offer and are absolute.
+
 Read this file before writing any component in `components/sales/`.
 
 ## Language

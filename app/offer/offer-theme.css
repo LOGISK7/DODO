@@ -1,0 +1,111 @@
+.offer-root {
+  --bg: #0A0A0A;
+  --bg-alt: #141414;
+  --bg-light: #FFFFFF;
+  --ink: #111111;
+  --fg: #FFFFFF;
+  --fg-2: rgba(255, 255, 255, 0.78);
+  --hl: #FFD84D;
+  --red: #D93025;
+  --cta: #FFC107;
+  --cta-hover: #FFB300;
+  --green: #1E8E3E;
+  --line-d: rgba(255, 255, 255, 0.16);
+  --line-l: #E0E0E0;
+  --maxw-copy: 860px;
+  --maxw-grid: 1140px;
+
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  letter-spacing: 0;
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.offer-root h1 {
+  font-size: clamp(30px, 5vw, 58px);
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0;
+}
+
+.offer-root h2 {
+  font-size: clamp(26px, 4vw, 44px);
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0;
+}
+
+.offer-root h3 {
+  font-size: 22px;
+  line-height: 1.35;
+  font-weight: 700;
+  margin: 0;
+}
+
+.offer-root p,
+.offer-root div {
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.offer-root small {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.offer-root mark {
+  background: var(--hl);
+  color: #111;
+  padding: 0 6px;
+  border-radius: 2px;
+}
+
+.offer-root .lat {
+  letter-spacing: initial;
+}
+
+.offer-section {
+  padding-block: 72px;
+}
+
+@media (min-width: 768px) {
+  .offer-section {
+    padding-block: 104px;
+  }
+}
+
+.offer-section.dark { background-color: var(--bg); color: var(--fg); }
+.offer-section.alt { background-color: var(--bg-alt); color: var(--fg); }
+.offer-section.light { background-color: var(--bg-light); color: var(--ink); }
+.offer-section.cta { background-color: var(--cta); color: #111; padding-block: 32px; } /* CtaBand might be smaller padding, but we'll adapt in components */
+
+/* Utilities */
+.offer-container {
+  max-width: var(--maxw-grid);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+.offer-container.narrow {
+  max-width: var(--maxw-copy);
+}
+
+.offer-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cta);
+  color: #111;
+  font-weight: 700;
+  font-size: 19px;
+  padding: 18px 34px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 140ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.offer-button:hover {
+  background: var(--cta-hover);
+  transform: translateY(-1px);
+}
