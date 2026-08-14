@@ -1,7 +1,15 @@
+import { Nav } from "@/components/Nav";
+import { Hero } from "@/components/Hero";
+import { StickyCta } from "@/components/StickyCta";
+
 export default function Home() {
   return (
-    <main>
-      {/* Content will be built here */}
-    </main>
+    <>
+      <Nav />
+      <main>
+        <Hero />
+      </main>
+      <StickyCta />
+    </>
   );
 }
