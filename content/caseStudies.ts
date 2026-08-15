@@ -1,0 +1,32 @@
+export const caseStudies = [
+  {
+    id: "case-1",
+    product: "[REAL PRODUCT]",
+    problem: "[REAL PROBLEM]",
+    whatWeTested: "[REAL TEST DESCRIPTION]",
+    whatWeLearned: "[REAL LEARNING]",
+    whatWeTestedNext: "[REAL NEXT TEST]",
+    result: "[REAL RESULT]",
+    screenshot: null,
+  },
+  {
+    id: "case-2",
+    product: "[REAL PRODUCT]",
+    problem: "[REAL PROBLEM]",
+    whatWeTested: "[REAL TEST DESCRIPTION]",
+    whatWeLearned: "[REAL LEARNING]",
+    whatWeTestedNext: "[REAL NEXT TEST]",
+    result: "[REAL RESULT]",
+    screenshot: null,
+  },
+  {
+    id: "case-3",
+    product: "[REAL PRODUCT]",
+    problem: "[REAL PROBLEM]",
+    whatWeTested: "[REAL TEST DESCRIPTION]",
+    whatWeLearned: "[REAL LEARNING]",
+    whatWeTestedNext: "[REAL NEXT TEST]",
+    result: "[REAL RESULT]",
+    screenshot: null,
+  },
+];
