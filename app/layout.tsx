@@ -1,25 +1,32 @@
 import type { Metadata } from "next";
-import { Tajawal, Cairo } from "next/font/google";
+import { Inter, DM_Sans, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 
-const tajawal = Tajawal({
-  subsets: ["arabic", "latin"],
-  weight: ["300", "400", "500", "700", "800"],
-  variable: "--font-body",
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "900"],
+  variable: "--font-inter",
   display: "swap",
 });
 
-const cairo = Cairo({
-  subsets: ["arabic", "latin"],
-  weight: ["400", "600", "700", "800", "900"],
-  variable: "--font-heading",
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const ibmPlexSerif = IBM_Plex_Serif({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["italic", "normal"],
+  variable: "--font-ibm-plex",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "AI E-Commerce Creative & Ad Testing System",
-  description:
-    "نظام كامل لإنشاء واختبار وتحليل وتحسين الـ Creatives الإعلانية لمتاجر التجارة الإلكترونية.",
+  title: "Dragon 100™ Replica",
+  description: "A replica of the Dragon 100 landing page.",
 };
 
 export default function RootLayout({
@@ -28,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl">
-      <body className={`${tajawal.variable} ${cairo.variable}`}>
+    <html lang="en" dir="ltr">
+      <body className={`${inter.variable} ${dmSans.variable} ${ibmPlexSerif.variable} font-sans`}>
         {children}
       </body>
     </html>
