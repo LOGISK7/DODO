@@ -6,8 +6,8 @@ export default function HowItWorks() {
     { num: "04", label: "أنشئ Hooks", desc: "Hooks تخطف الانتباه في أول 3 ثواني", icon: "🪝" },
     { num: "05", label: "أنشئ Creatives", desc: "مفاهيم وسكريبتات جاهزة للتنفيذ", icon: "🎬" },
     { num: "06", label: "اختبر", desc: "إطار اختبار منظم على Meta Ads", icon: "🧪" },
-    { num: "07", label: "أدخل النتائج", desc: "CTR, CPM, CPA, ROAS", icon: "📥" },
-    { num: "08", label: "حلل", desc: "لماذا نجح؟ لماذا فشل؟ ماذا تتعلم؟", icon: "📊" },
+    { num: "07", label: "أدخل النتائج", desc: "CTR, CPM, CPA, إشارات الـ ROAS", icon: "📥" },
+    { num: "08", label: "حلل", desc: "حدد الأنماط المشتركة والزوايا الواعدة", icon: "📊" },
     { num: "09", label: "اعرف ماذا تختبر بعد ذلك", desc: "اقتراحات مبنية على البيانات", icon: "🔮" },
     { num: "10", label: "كرر", desc: "كل دورة تبني على اللي قبلها", icon: "🔄" },
   ];
