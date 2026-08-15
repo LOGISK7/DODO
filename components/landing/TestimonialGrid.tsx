@@ -1,5 +1,6 @@
 import React from "react";
 import VideoEmbed from "../ui/VideoEmbed";
+import { Reveal } from "../ui/Reveal";
 
 export default function TestimonialGrid() {
   const testimonials = [
@@ -34,27 +35,31 @@ export default function TestimonialGrid() {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
           {testimonials.map((test, idx) => (
-            <div key={idx} className="flex flex-col gap-6">
-              <VideoEmbed />
-              <div>
-                <h4 className="font-heading text-xl md:text-2xl font-bold mb-4">{test.headline}</h4>
-                <p className="text-[16px] text-[var(--text-secondary)] italic mb-6 leading-relaxed">
-                  {test.quote}
-                </p>
+            <Reveal key={idx} delay={idx * 0.1}>
+              <div className="flex flex-col gap-6">
+                <VideoEmbed />
                 <div>
-                  <p className="font-bold text-white text-[16px]">{test.name}</p>
-                  <p className="text-[14px] text-[var(--text-muted)]">{test.role}</p>
+                  <h4 className="font-heading text-xl md:text-2xl font-bold mb-4">{test.headline}</h4>
+                  <p className="text-[16px] text-[var(--text-secondary)] italic mb-6 leading-relaxed">
+                    {test.quote}
+                  </p>
+                  <div>
+                    <p className="font-bold text-white text-[16px]">{test.name}</p>
+                    <p className="text-[14px] text-[var(--text-muted)]">{test.role}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
         
-        <div className="mt-20 text-center">
-          <button className="btn-ghost">
-            WATCH MORE SUCCESS STORIES
-          </button>
-        </div>
+        <Reveal delay={0.4}>
+          <div className="mt-20 text-center">
+            <button className="btn-ghost">
+              WATCH MORE SUCCESS STORIES
+            </button>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

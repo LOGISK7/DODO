@@ -1,4 +1,5 @@
 import React from "react";
+import { Reveal } from "../ui/Reveal";
 
 export default function TheLie() {
   return (
@@ -6,18 +7,20 @@ export default function TheLie() {
       <div className="container max-w-[900px] mx-auto space-y-24">
         
         {/* Intro */}
-        <div className="text-center">
-          <h3 className="text-3xl md:text-4xl font-bold mb-8 leading-tight">
-            If you’re nodding your head, you aren’t alone.<br />
-            You’ve just fallen into a Success Prison.
-          </h3>
-          <p className="text-[17px] text-[var(--text-secondary)] leading-relaxed text-left mb-6">
-            You’re sprinting faster than ever, generating more than ever, and looking more “successful” than ever to everyone else... yet behind closed doors, you’re left broke, burned out, and bound to a machine you forged with your own hands to set you free.
-          </p>
-          <p className="text-[17px] text-[var(--text-secondary)] leading-relaxed text-left">
-            <span className="text-[var(--accent)] font-semibold">It’s the ultimate irony:</span> The bigger your business gets, the tighter the bars become. You’ve spent the last decade building a door to freedom, only to realize you accidentally built a cage and locked yourself inside.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center">
+            <h3 className="text-3xl md:text-4xl font-bold mb-8 leading-tight">
+              If you’re nodding your head, you aren’t alone.<br />
+              You’ve just fallen into a Success Prison.
+            </h3>
+            <p className="text-[17px] text-[var(--text-secondary)] leading-relaxed text-left mb-6">
+              You’re sprinting faster than ever, generating more than ever, and looking more “successful” than ever to everyone else... yet behind closed doors, you’re left broke, burned out, and bound to a machine you forged with your own hands to set you free.
+            </p>
+            <p className="text-[17px] text-[var(--text-secondary)] leading-relaxed text-left">
+              <span className="text-[var(--accent)] font-semibold">It’s the ultimate irony:</span> The bigger your business gets, the tighter the bars become. You’ve spent the last decade building a door to freedom, only to realize you accidentally built a cage and locked yourself inside.
+            </p>
+          </div>
+        </Reveal>
 
         {/* The Bigger is Better Lie */}
         <div>
@@ -49,15 +52,17 @@ export default function TheLie() {
       <div className="container max-w-[900px] mx-auto mt-24 space-y-24">
         
         {/* Quote Block */}
-        <div className="text-center bg-[var(--bg-card)] border border-[var(--border)] p-12 relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-50" />
-          <h4 className="text-2xl md:text-3xl font-serif italic font-bold mb-6">
-            “Sales is vanity. Profit is sanity. Investable Net Worth is reality.”
-          </h4>
-          <p className="font-label text-sm uppercase tracking-widest text-[var(--accent)]">
-            Dan Lok
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center bg-[var(--bg-card)] border border-[var(--border)] p-12 relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-50" />
+            <h4 className="text-2xl md:text-3xl font-serif italic font-bold mb-6">
+              “Sales is vanity. Profit is sanity. Investable Net Worth is reality.”
+            </h4>
+            <p className="font-label text-sm uppercase tracking-widest text-[var(--accent)]">
+              Dan Lok
+            </p>
+          </div>
+        </Reveal>
 
         {/* 4% Rule */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
