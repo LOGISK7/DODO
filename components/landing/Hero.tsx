@@ -45,7 +45,7 @@ export default function Hero() {
         style={{ background: "radial-gradient(circle, var(--accent) 0%, transparent 70%)" }}
       />
 
-      <div className="container--wide relative z-10 w-full max-w-[1400px] mx-auto px-[clamp(1.25rem,4vw,3rem)] py-20 md:py-0">
+      <div className="container--wide relative z-10 py-20 md:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Text Column */}
           <div className="order-2 lg:order-1">

@@ -8,7 +8,8 @@ export default function CtaBand() {
         borderBottom: "1px solid var(--border)",
       }}
     >
-      <div className="max-w-[600px] mx-auto reveal">
+      <div className="container">
+        <div className="max-w-[600px] w-full mx-auto reveal">
         <p
           className="text-lg md:text-xl mb-6 font-bold"
           style={{ fontFamily: "var(--font-heading)", color: "var(--text-primary)" }}
@@ -21,6 +22,7 @@ export default function CtaBand() {
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
+        </div>
       </div>
     </section>
   );
