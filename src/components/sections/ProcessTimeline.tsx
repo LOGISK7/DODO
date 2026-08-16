@@ -37,25 +37,25 @@ export default function ProcessTimeline() {
   ];
 
   return (
-    <section id="process" className="py-24 md:py-32 bg-[#080808] border-t border-[#18181B] relative overflow-hidden">
+    <section id="process" className="py-24 md:py-32 bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)] relative overflow-hidden">
       <div className="max-w-[1240px] mx-auto px-6 md:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <Reveal>
-            <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#c5a059] block mb-3">
+            <span className="text-xs font-bold uppercase tracking-[0.24em] text-[var(--accent-cobalt)] block mb-3">
               Admissions Roadmap
             </span>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight mb-6">
-              How to Secure <span className="font-serif-accent italic gold-gradient-text">Your Seat</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-[var(--text-primary)] tracking-tight mb-6">
+              How to Secure <span className="font-heading italic text-[var(--accent-cobalt)]">Your Seat</span>
             </h2>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="text-base md:text-lg text-[#A1A1AA] leading-relaxed">
+            <p className="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed">
               A streamlined, 4-step onboarding sequence engineered for busy executives.
             </p>
           </Reveal>
@@ -64,7 +64,7 @@ export default function ProcessTimeline() {
         {/* 4-Step Grid with Connecting Line */}
         <div className="relative">
           {/* Desktop Connecting Line */}
-          <div className="hidden lg:block absolute top-[44px] left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-[#c5a059]/40 to-transparent z-0" />
+          <div className="hidden lg:block absolute top-[44px] left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-[var(--accent-cobalt)]/40 to-transparent z-0" />
 
           <StaggerContainer staggerDelay={0.12} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {steps.map((item) => {
@@ -74,20 +74,20 @@ export default function ProcessTimeline() {
                   <div className="flex flex-col items-center text-center group h-full">
                     
                     {/* Circle Badge with Icon */}
-                    <div className="w-20 h-20 md:w-22 md:h-22 rounded-full bg-[#111113] border-2 border-[#27272a] group-hover:border-[#c5a059] flex flex-col items-center justify-center mb-6 shadow-xl transition-all duration-300 group-hover:shadow-[0_0_25px_rgba(197,160,89,0.3)]">
-                      <Icon className="w-6 h-6 text-[#c5a059] mb-1" />
-                      <span className="text-[9px] font-mono font-bold tracking-widest text-[#A1A1AA] group-hover:text-white transition-colors">
+                    <div className="w-20 h-20 md:w-22 md:h-22 rounded-full bg-[var(--bg-card)] border-2 border-[var(--border-subtle)] group-hover:border-[var(--accent-cobalt)] flex flex-col items-center justify-center mb-6 shadow-xl transition-all duration-300 group-hover:shadow-[0_0_25px_rgba(197,160,89,0.3)]">
+                      <Icon className="w-6 h-6 text-[var(--accent-cobalt)] mb-1" />
+                      <span className="text-[9px] font-mono font-bold tracking-widest text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors">
                         {item.step}
                       </span>
                     </div>
 
                     {/* Step Title */}
-                    <h3 className="font-serif font-bold text-lg md:text-xl text-white tracking-wider mb-3">
+                    <h3 className="font-heading font-bold text-lg md:text-xl text-[var(--text-primary)] tracking-wider mb-3">
                       {item.title}
                     </h3>
 
                     {/* Step Description */}
-                    <p className="text-xs md:text-sm text-[#A1A1AA] leading-relaxed font-sans max-w-xs">
+                    <p className="text-xs md:text-sm text-[var(--text-secondary)] leading-relaxed font-sans max-w-xs">
                       {item.description}
                     </p>
 
@@ -102,7 +102,7 @@ export default function ProcessTimeline() {
         <Reveal delay={0.4} className="mt-16 text-center">
           <a
             href="#calculator"
-            className="btn-gold-primary text-xs py-4 px-10"
+            className="btn-cobalt-primary text-xs py-4 px-10"
           >
             Apply For Membership Protocol
           </a>

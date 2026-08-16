@@ -16,58 +16,66 @@ import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-[#EDEDED] flex flex-col">
-      {/* N1b Canonical SaaS Navigation */}
+    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-secondary)] flex flex-col font-sans overflow-x-hidden selection:bg-[var(--accent-cobalt)] selection:text-white">
+      {/* N5 Floating pill */}
       <Navbar />
 
-      <main className="flex-grow flex flex-col gap-12 lg:gap-24 mb-24">
-        {/* Fixed-height hero with centered display */}
-        <header className="hero-fixed min-h-[70vh] flex flex-col items-center justify-center text-center px-4 pt-24">
+      <main className="flex-grow flex flex-col mb-24">
+        {/* Marquee Hero Macrostructure */}
+        <header className="relative w-full min-h-[85vh] flex flex-col items-center justify-center text-center px-4 pt-32 pb-16 overflow-hidden border-b border-[var(--border-subtle)] bg-[var(--bg-card)]">
           <Hero />
+          
+          {/* Marquee Background Element */}
+          <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full overflow-hidden whitespace-nowrap opacity-[0.03] pointer-events-none select-none z-0">
+            <span className="text-[15vw] font-bold tracking-tighter uppercase font-heading">
+              DIGITAL COMMERCE MASTERY
+            </span>
+          </div>
         </header>
 
-        {/* Bento Grid: Modular blocks of varying sizes */}
-        <section className="bento max-w-7xl mx-auto w-full px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          <article className="cell col-span-1 md:col-span-2 lg:col-span-4 bg-[#111] rounded-2xl overflow-hidden p-6 md:p-10 border border-[rgba(255,255,255,0.08)]">
+        {/* Linear Flow / Workbench Section */}
+        <div className="w-full bg-[var(--bg-secondary)] border-b border-[var(--border-subtle)]">
+          <section className="max-w-5xl mx-auto w-full px-4 py-20 flex flex-col gap-12">
             <PainPoints />
-          </article>
-          
-          <article className="cell col-span-1 lg:col-span-2 bg-[#111] rounded-2xl overflow-hidden p-6 border border-[rgba(255,255,255,0.08)]">
-            <InteractiveCalculator />
-          </article>
-          
-          <article className="cell col-span-1 lg:col-span-2 bg-[#111] rounded-2xl overflow-hidden p-6 border border-[rgba(255,255,255,0.08)]">
-            <FrameworkThreeEs />
-          </article>
-          
-          <article className="cell col-span-1 md:col-span-2 lg:col-span-4 bg-transparent py-10">
-            <ProofWall />
-          </article>
-          
-          <article className="cell col-span-1 md:col-span-2 bg-[#111] rounded-2xl overflow-hidden p-6 border border-[rgba(255,255,255,0.08)]">
-            <TestimonialsCarouselOne />
-          </article>
+          </section>
+        </div>
 
-          <article className="cell col-span-1 md:col-span-2 bg-[#111] rounded-2xl overflow-hidden p-6 border border-[rgba(255,255,255,0.08)]">
-            <Qualifications />
-          </article>
+        {/* Feature & Proof Sections */}
+        <section className="max-w-5xl mx-auto w-full px-4 py-24 flex flex-col gap-24">
+          <InteractiveCalculator />
+          
+          <div className="border-l-2 border-[var(--accent-cobalt)] pl-6 md:pl-10">
+            <FrameworkThreeEs />
+          </div>
         </section>
 
-        {/* Long Form / Narrative Flow below the fold */}
-        <section className="max-w-4xl mx-auto w-full px-4 flex flex-col gap-16 mt-16">
+        {/* Social Proof Strip */}
+        <div className="w-full bg-[var(--bg-card-elevated)] border-y border-[var(--border-subtle)] py-20">
+          <section className="max-w-7xl mx-auto w-full px-4 flex flex-col gap-16">
+            <ProofWall />
+            <TestimonialsCarouselOne />
+          </section>
+        </div>
+
+        {/* Deep Narrative Flow */}
+        <section className="max-w-3xl mx-auto w-full px-4 py-24 flex flex-col gap-20">
+          <Qualifications />
           <NarrativeSection />
           <BigStatement />
           <ProcessTimeline />
           <FounderBio />
-          <FAQAccordion />
         </section>
-        
-        <section className="max-w-7xl mx-auto w-full px-4">
-          <TestimonialsCarouselTwo />
-        </section>
+
+        {/* Final CTA / FAQ */}
+        <div className="w-full bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)] py-24">
+          <section className="max-w-4xl mx-auto w-full px-4 flex flex-col gap-20">
+            <FAQAccordion />
+            <TestimonialsCarouselTwo />
+          </section>
+        </div>
       </main>
 
-      {/* Ft5 Statement Footer */}
+      {/* Ft2 Brutal Minimal Footer */}
       <Footer />
     </div>
   );

@@ -46,25 +46,25 @@ export default function FAQAccordion() {
   };
 
   return (
-    <section id="faq" className="py-24 md:py-32 bg-[#080808] border-t border-[#18181B] relative">
+    <section id="faq" className="py-24 md:py-32 bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)] relative">
       <div className="max-w-[900px] mx-auto px-6 md:px-8">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <Reveal>
-            <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#c5a059] block mb-3">
+            <span className="text-xs font-bold uppercase tracking-[0.24em] text-[var(--accent-cobalt)] block mb-3">
               Direct Answers
             </span>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight mb-6">
-              Frequently Asked <span className="font-serif-accent italic gold-gradient-text">Questions</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-[var(--text-primary)] tracking-tight mb-6">
+              Frequently Asked <span className="font-heading italic text-[var(--accent-cobalt)]">Questions</span>
             </h2>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="text-base text-[#A1A1AA] leading-relaxed font-sans">
+            <p className="text-base text-[var(--text-secondary)] leading-relaxed font-sans">
               Clear answers regarding eligibility, boardroom mechanics, and advisory deliverables.
             </p>
           </Reveal>
@@ -76,19 +76,19 @@ export default function FAQAccordion() {
             const isOpen = openIndex === idx;
             return (
               <Reveal key={idx} delay={idx * 0.05}>
-                <div className="rounded-sm bg-[#0E0E10] border border-[#222226] overflow-hidden transition-colors hover:border-[#c5a059]/40">
+                <div className="rounded-sm bg-[var(--bg-card)] border border-[var(--border-subtle)] overflow-hidden transition-colors hover:border-[var(--border-cobalt)]">
                   <button
                     onClick={() => toggleFAQ(idx)}
                     className="w-full p-6 sm:p-7 text-left flex items-center justify-between gap-4 transition-colors"
                     aria-expanded={isOpen}
                   >
-                    <span className="font-serif font-bold text-base sm:text-lg text-white pr-4">
+                    <span className="font-heading font-bold text-base sm:text-lg text-[var(--text-primary)] pr-4">
                       {faq.question}
                     </span>
                     <motion.div
                       animate={{ rotate: isOpen ? 45 : 0 }}
                       transition={{ duration: 0.25, ease: "easeInOut" }}
-                      className="w-8 h-8 rounded-full bg-[#18181B] border border-[#2B2B32] flex items-center justify-center text-[#c5a059] flex-shrink-0"
+                      className="w-8 h-8 rounded-full bg-[#18181B] border border-[var(--border-subtle)] flex items-center justify-center text-[var(--accent-cobalt)] flex-shrink-0"
                     >
                       <Plus size={16} />
                     </motion.div>
@@ -102,7 +102,7 @@ export default function FAQAccordion() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       >
-                        <div className="px-6 sm:px-7 pb-6 sm:pb-7 pt-1 text-sm md:text-base text-[#A1A1AA] leading-relaxed font-sans border-t border-[#18181D]">
+                        <div className="px-6 sm:px-7 pb-6 sm:pb-7 pt-1 text-sm md:text-base text-[var(--text-secondary)] leading-relaxed font-sans border-t border-[var(--border-subtle)]">
                           {faq.answer}
                         </div>
                       </motion.div>

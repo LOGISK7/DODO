@@ -68,20 +68,20 @@ export default function TestimonialsCarouselOne() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-black overflow-hidden relative">
+    <section className="py-24 md:py-32 bg-[var(--bg-primary)] overflow-hidden relative">
       <div className="max-w-[1240px] mx-auto px-6 md:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <Reveal>
-              <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#c5a059] block mb-3">
+              <span className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--accent-cobalt)] block mb-3">
                 Verified Founder Case Studies
               </span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight">
-                From Success Prison to <span className="font-serif-accent italic gold-gradient-text">Absolute Certainty</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-[var(--text-primary)] tracking-tight">
+                From Success Prison to <span className="font-heading italic text-[var(--accent-cobalt)]">Absolute Certainty</span>
               </h2>
             </Reveal>
           </div>
@@ -90,14 +90,14 @@ export default function TestimonialsCarouselOne() {
           <div className="flex items-center gap-3">
             <button
               onClick={scrollPrev}
-              className="w-12 h-12 rounded-full border border-[#27272a] bg-[#111113] flex items-center justify-center text-white hover:border-[#c5a059] hover:text-[#c5a059] transition-all"
+              className="w-12 h-12 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-card)] flex items-center justify-center text-[var(--text-primary)] hover:border-[var(--accent-cobalt)] hover:text-[var(--accent-cobalt)] transition-all"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={20} />
             </button>
             <button
               onClick={scrollNext}
-              className="w-12 h-12 rounded-full border border-[#27272a] bg-[#111113] flex items-center justify-center text-white hover:border-[#c5a059] hover:text-[#c5a059] transition-all"
+              className="w-12 h-12 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-card)] flex items-center justify-center text-[var(--text-primary)] hover:border-[var(--accent-cobalt)] hover:text-[var(--accent-cobalt)] transition-all"
               aria-label="Next testimonial"
             >
               <ChevronRight size={20} />
@@ -113,41 +113,41 @@ export default function TestimonialsCarouselOne() {
                 key={idx}
                 className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_50%] pl-6 min-w-0"
               >
-                <div className="h-full p-8 md:p-10 rounded-sm bg-[#0E0E10] border border-[#222226] hover:border-[#c5a059]/40 transition-all duration-300 flex flex-col justify-between relative group">
+                <div className="h-full p-8 md:p-10 rounded-sm bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--border-cobalt)] transition-all duration-300 flex flex-col justify-between relative group">
                   {/* Subtle top gold accent glow on card */}
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#c5a059]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[var(--accent-cobalt)]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
                   <div>
                     {/* Header with Star Rating and Badge */}
                     <div className="flex items-center justify-between gap-4 mb-6">
-                      <div className="flex items-center gap-1 text-[#c5a059]">
+                      <div className="flex items-center gap-1 text-[var(--accent-cobalt)]">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} size={15} className="fill-[#c5a059]" />
+                          <Star key={i} size={15} className="fill-[var(--accent-cobalt)]" />
                         ))}
                       </div>
-                      <span className="text-[11px] font-bold uppercase tracking-[0.16em] px-2.5 py-1 rounded bg-[#1A1A1E] border border-[#2B2B32] text-[#fae19c]">
+                      <span className="text-[11px] font-bold uppercase tracking-[0.16em] px-2.5 py-1 rounded bg-[#1A1A1E] border border-[var(--border-subtle)] text-[var(--accent-cobalt-light)]">
                         {item.badge}
                       </span>
                     </div>
 
                     {/* Quote */}
-                    <p className="text-[#D4D4D8] font-sans text-base md:text-[17px] leading-relaxed italic mb-8">
+                    <p className="text-[var(--text-primary)] font-sans text-base md:text-[17px] leading-relaxed italic mb-8">
                       "{item.quote}"
                     </p>
                   </div>
 
                   {/* Founder Profile */}
-                  <div className="pt-6 border-t border-[#1C1C22] flex items-center justify-between gap-4">
+                  <div className="pt-6 border-t border-[var(--border-subtle)] flex items-center justify-between gap-4">
                     <div>
-                      <h4 className="font-serif font-bold text-white text-base md:text-lg flex items-center gap-1.5">
+                      <h4 className="font-heading font-bold text-[var(--text-primary)] text-base md:text-lg flex items-center gap-1.5">
                         {item.name}
-                        <CheckCircle size={15} className="text-[#c5a059]" />
+                        <CheckCircle size={15} className="text-[var(--accent-cobalt)]" />
                       </h4>
-                      <p className="text-xs text-[#80808a] font-sans mt-0.5">{item.title}</p>
+                      <p className="text-xs text-[var(--text-muted)] font-sans mt-0.5">{item.title}</p>
                     </div>
 
                     <div className="text-right">
-                      <span className="text-xs font-bold text-[#c5a059] block font-mono">
+                      <span className="text-xs font-bold text-[var(--accent-cobalt)] block font-mono">
                         {item.milestone}
                       </span>
                     </div>
@@ -165,7 +165,7 @@ export default function TestimonialsCarouselOne() {
               key={index}
               onClick={() => scrollTo(index)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                index === selectedIndex ? "w-8 bg-[#c5a059]" : "w-2 bg-[#27272a]"
+                index === selectedIndex ? "w-8 bg-[var(--accent-cobalt)]" : "w-2 bg-[#27272a]"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
