@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+/* Hallmark · macrostructure: 01 Bento Grid · nav: N1b SaaS three-section · footer: Ft5 Statement · genre: editorial · theme: custom (luxury dark/gold) */
+
 @layer base {
   :root {
     --bg-primary: #000000;

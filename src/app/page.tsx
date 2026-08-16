@@ -17,51 +17,57 @@ import Footer from "@/components/sections/Footer";
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-[#EDEDED] flex flex-col">
-      {/* 1. Sticky Luxury Navigation Header */}
+      {/* N1b Canonical SaaS Navigation */}
       <Navbar />
 
-      <main className="flex-grow">
-        {/* 2. Hero Section */}
-        <Hero />
+      <main className="flex-grow flex flex-col gap-12 lg:gap-24 mb-24">
+        {/* Fixed-height hero with centered display */}
+        <header className="hero-fixed min-h-[70vh] flex flex-col items-center justify-center text-center px-4 pt-24">
+          <Hero />
+        </header>
 
-        {/* 3. 'Ask Yourself' Pain-Point Audit List */}
-        <PainPoints />
+        {/* Bento Grid: Modular blocks of varying sizes */}
+        <section className="bento max-w-7xl mx-auto w-full px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <article className="cell col-span-1 md:col-span-2 lg:col-span-4 bg-[#111] rounded-2xl overflow-hidden p-6 md:p-10 border border-[rgba(255,255,255,0.08)]">
+            <PainPoints />
+          </article>
+          
+          <article className="cell col-span-1 lg:col-span-2 bg-[#111] rounded-2xl overflow-hidden p-6 border border-[rgba(255,255,255,0.08)]">
+            <InteractiveCalculator />
+          </article>
+          
+          <article className="cell col-span-1 lg:col-span-2 bg-[#111] rounded-2xl overflow-hidden p-6 border border-[rgba(255,255,255,0.08)]">
+            <FrameworkThreeEs />
+          </article>
+          
+          <article className="cell col-span-1 md:col-span-2 lg:col-span-4 bg-transparent py-10">
+            <ProofWall />
+          </article>
+          
+          <article className="cell col-span-1 md:col-span-2 bg-[#111] rounded-2xl overflow-hidden p-6 border border-[rgba(255,255,255,0.08)]">
+            <TestimonialsCarouselOne />
+          </article>
 
-        {/* 4. Testimonial Carousel #1 (Auto-rotating verified founder stories) */}
-        <TestimonialsCarouselOne />
+          <article className="cell col-span-1 md:col-span-2 bg-[#111] rounded-2xl overflow-hidden p-6 border border-[rgba(255,255,255,0.08)]">
+            <Qualifications />
+          </article>
+        </section>
 
-        {/* 5. Narrative & The Success Prison Story */}
-        <NarrativeSection />
-
-        {/* 6. Pull-Quote Big Statement */}
-        <BigStatement />
-
-        {/* 7. Framework Section (Three E's of Enterprise Freedom) */}
-        <FrameworkThreeEs />
-
-        {/* 8. Testimonial Carousel #2 (Enterprise Multiple Milestones) */}
-        <TestimonialsCarouselTwo />
-
-        {/* 9. Centerpiece Interactive Certainty Calculator */}
-        <InteractiveCalculator />
-
-        {/* 10. Proof Wall (Grayscale Media & Authority Logos) */}
-        <ProofWall />
-
-        {/* 11. Qualifications (Who This Is For vs Not For) */}
-        <Qualifications />
-
-        {/* 12. 4-Step Numbered Admissions Timeline */}
-        <ProcessTimeline />
-
-        {/* 13. Founder Bio & Final Mission */}
-        <FounderBio />
-
-        {/* 14. FAQ Accordion */}
-        <FAQAccordion />
+        {/* Long Form / Narrative Flow below the fold */}
+        <section className="max-w-4xl mx-auto w-full px-4 flex flex-col gap-16 mt-16">
+          <NarrativeSection />
+          <BigStatement />
+          <ProcessTimeline />
+          <FounderBio />
+          <FAQAccordion />
+        </section>
+        
+        <section className="max-w-7xl mx-auto w-full px-4">
+          <TestimonialsCarouselTwo />
+        </section>
       </main>
 
-      {/* 15. Compliance Footer & Legal Disclaimers */}
+      {/* Ft5 Statement Footer */}
       <Footer />
     </div>
   );
