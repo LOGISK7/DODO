@@ -68,20 +68,20 @@ export default function TestimonialsCarouselTwo() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)] overflow-hidden relative">
+    <section className="py-24 md:py-32 bg-[#080808] border-t border-[#18181B] overflow-hidden relative">
       <div className="max-w-[1240px] mx-auto px-6 md:px-8">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <Reveal>
-              <span className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--accent-cobalt)] block mb-3">
+              <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#c5a059] block mb-3">
                 Proven Track Record
               </span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-[var(--text-primary)] tracking-tight">
-                Enterprise Value <span className="font-heading italic text-[var(--accent-cobalt)]">Milestones</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight">
+                Enterprise Value <span className="font-serif-accent italic gold-gradient-text">Milestones</span>
               </h2>
             </Reveal>
           </div>
@@ -90,14 +90,14 @@ export default function TestimonialsCarouselTwo() {
           <div className="flex items-center gap-3">
             <button
               onClick={scrollPrev}
-              className="w-12 h-12 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-card)] flex items-center justify-center text-[var(--text-primary)] hover:border-[var(--accent-cobalt)] hover:text-[var(--accent-cobalt)] transition-all"
+              className="w-12 h-12 rounded-full border border-[#27272a] bg-[#111113] flex items-center justify-center text-white hover:border-[#c5a059] hover:text-[#c5a059] transition-all"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={20} />
             </button>
             <button
               onClick={scrollNext}
-              className="w-12 h-12 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-card)] flex items-center justify-center text-[var(--text-primary)] hover:border-[var(--accent-cobalt)] hover:text-[var(--accent-cobalt)] transition-all"
+              className="w-12 h-12 rounded-full border border-[#27272a] bg-[#111113] flex items-center justify-center text-white hover:border-[#c5a059] hover:text-[#c5a059] transition-all"
               aria-label="Next testimonial"
             >
               <ChevronRight size={20} />
@@ -113,35 +113,35 @@ export default function TestimonialsCarouselTwo() {
                 key={idx}
                 className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_50%] pl-6 min-w-0"
               >
-                <div className="h-full p-8 md:p-10 rounded-sm bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--border-cobalt)] transition-all duration-300 flex flex-col justify-between relative group">
+                <div className="h-full p-8 md:p-10 rounded-sm bg-[#111113] border border-[#222226] hover:border-[#c5a059]/50 transition-all duration-300 flex flex-col justify-between relative group">
                   
                   <div>
                     {/* Award Badge */}
                     <div className="flex items-center justify-between gap-4 mb-6">
-                      <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[var(--accent-cobalt-light)]">
-                        <Award size={16} className="text-[var(--accent-cobalt)]" />
+                      <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#fae19c]">
+                        <Award size={16} className="text-[#c5a059]" />
                         <span>{item.award}</span>
                       </div>
-                      <div className="inline-flex items-center gap-1 text-xs font-mono font-bold text-[var(--accent-cobalt)] bg-[#1B1B20] px-2.5 py-1 rounded">
+                      <div className="inline-flex items-center gap-1 text-xs font-mono font-bold text-[#c5a059] bg-[#1B1B20] px-2.5 py-1 rounded">
                         <TrendingUp size={13} />
                         <span>{item.milestone}</span>
                       </div>
                     </div>
 
                     {/* Quote */}
-                    <p className="text-[var(--text-primary)] font-sans text-base md:text-[17px] leading-relaxed italic mb-8">
+                    <p className="text-[#D4D4D8] font-sans text-base md:text-[17px] leading-relaxed italic mb-8">
                       "{item.quote}"
                     </p>
                   </div>
 
                   {/* Founder Profile */}
-                  <div className="pt-6 border-t border-[var(--border-subtle)] flex items-center justify-between gap-4">
+                  <div className="pt-6 border-t border-[#1C1C22] flex items-center justify-between gap-4">
                     <div>
-                      <h4 className="font-heading font-bold text-[var(--text-primary)] text-base md:text-lg flex items-center gap-1.5">
+                      <h4 className="font-serif font-bold text-white text-base md:text-lg flex items-center gap-1.5">
                         {item.name}
-                        <CheckCircle size={15} className="text-[var(--accent-cobalt)]" />
+                        <CheckCircle size={15} className="text-[#c5a059]" />
                       </h4>
-                      <p className="text-xs text-[var(--text-muted)] font-sans mt-0.5">{item.title}</p>
+                      <p className="text-xs text-[#80808a] font-sans mt-0.5">{item.title}</p>
                     </div>
                   </div>
 
@@ -158,7 +158,7 @@ export default function TestimonialsCarouselTwo() {
               key={index}
               onClick={() => scrollTo(index)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                index === selectedIndex ? "w-8 bg-[var(--accent-cobalt)]" : "w-2 bg-[#27272a]"
+                index === selectedIndex ? "w-8 bg-[#c5a059]" : "w-2 bg-[#27272a]"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

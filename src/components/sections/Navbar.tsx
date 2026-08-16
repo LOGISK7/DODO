@@ -10,7 +10,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 60);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -22,34 +22,43 @@ export default function Navbar() {
     { label: "Calculator", href: "#calculator" },
     { label: "Qualifications", href: "#qualifications" },
     { label: "Process", href: "#process" },
+    { label: "FAQ", href: "#faq" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 pt-4 md:pt-6 px-4 pointer-events-none flex justify-center">
-      <div
-        className={`pointer-events-auto flex items-center justify-between transition-all duration-300 w-full max-w-5xl rounded-full px-4 md:px-6 py-3 border ${
-          isScrolled
-            ? "bg-[var(--bg-card)]/80 backdrop-blur-xl border-[var(--border-subtle)] shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
-            : "bg-[var(--bg-card)]/90 backdrop-blur-md border-[var(--border-subtle)] shadow-sm"
-        }`}
-      >
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-black/90 backdrop-blur-md border-b border-[#222226] py-3.5 shadow-2xl"
+          : "bg-transparent py-5 md:py-7"
+      }`}
+    >
+      <div className="max-w-[1280px] mx-auto px-6 md:px-8 flex items-center justify-between">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-2 md:gap-3 group shrink-0">
-          <div className="w-8 h-8 flex items-center justify-center bg-[var(--accent-cobalt)] text-[var(--text-primary)] rounded-full">
-            <span className="font-heading font-bold text-sm tracking-tighter">D</span>
+        <a href="#" className="flex items-center gap-3 group">
+          <div className="w-9 h-9 md:w-10 md:h-10 border border-[#c5a059] flex items-center justify-center bg-black/60 relative overflow-hidden group-hover:border-[#dfb76c] transition-colors">
+            <div className="absolute inset-0 bg-[#c5a059]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <span className="text-[#c5a059] font-serif font-bold text-lg md:text-xl italic leading-none">
+              D
+            </span>
           </div>
-          <span className="text-[var(--text-primary)] font-heading font-bold tracking-tight text-sm md:text-base hidden sm:block">
-            Dragon 100
-          </span>
+          <div className="flex flex-col">
+            <span className="text-white font-serif font-bold text-sm md:text-base tracking-[0.18em] uppercase">
+              DRAGON <span className="text-[#c5a059]">100™</span>
+            </span>
+            <span className="text-[9px] uppercase tracking-[0.25em] text-[#80808a] font-sans -mt-0.5">
+              Advisory Board
+            </span>
+          </div>
         </a>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 mx-auto">
+        <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-[13px] font-medium font-sans text-[var(--text-secondary)] hover:text-[var(--accent-cobalt)] transition-colors duration-200"
+              className="text-xs font-bold uppercase tracking-[0.14em] text-[#A1A1AA] hover:text-[#c5a059] transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -57,10 +66,10 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden sm:flex items-center shrink-0 ml-auto lg:ml-0">
+        <div className="hidden sm:flex items-center gap-4">
           <a
             href="#calculator"
-            className="btn-cobalt-primary text-xs py-2 px-5"
+            className="btn-gold-primary text-xs py-3 px-6 md:px-7"
           >
             Calculate Number
           </a>
@@ -69,10 +78,10 @@ export default function Navbar() {
         {/* Mobile Hamburger Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden text-[var(--text-primary)] p-1.5 hover:text-[var(--accent-cobalt)] transition-colors ml-auto sm:ml-4"
+          className="lg:hidden text-[#EDEDED] p-2 hover:text-[#c5a059] transition-colors"
           aria-label="Toggle navigation menu"
         >
-          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
@@ -80,29 +89,29 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-full left-4 right-4 mt-2 lg:hidden bg-[var(--bg-card)] rounded-2xl border border-[var(--border-subtle)] overflow-hidden shadow-2xl pointer-events-auto origin-top"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:hidden bg-[#0A0A0A] border-b border-[#222226] overflow-hidden"
           >
-            <div className="px-5 py-6 flex flex-col gap-4">
+            <div className="px-6 py-8 flex flex-col gap-5">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-medium font-sans text-[var(--text-primary)] hover:text-[var(--accent-cobalt)] py-2 transition-colors flex items-center justify-between"
+                  className="text-sm font-bold uppercase tracking-[0.15em] text-[#EDEDED] hover:text-[#c5a059] py-1 transition-colors flex items-center justify-between"
                 >
                   {link.label}
-                  <ArrowUpRight size={16} className="text-[var(--text-muted)]" />
+                  <ArrowUpRight size={16} className="text-[#80808a]" />
                 </a>
               ))}
-              <div className="pt-4 mt-2 border-t border-[var(--border-subtle)]">
+              <div className="pt-4 border-t border-[#222226]">
                 <a
                   href="#calculator"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="btn-cobalt-primary w-full text-center py-3 text-[13px]"
+                  className="btn-gold-primary w-full text-center py-3.5 text-xs"
                 >
                   Calculate Your Certainty Number
                 </a>

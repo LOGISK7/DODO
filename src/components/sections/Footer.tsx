@@ -5,54 +5,83 @@ import { Shield } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--bg-card)] border-t border-[var(--border-subtle)] pt-24 pb-12 text-[var(--text-secondary)] font-sans">
+    <footer className="bg-[#030304] border-t border-[#18181B] pt-20 pb-12 text-[#71717A] font-sans">
       <div className="max-w-[1240px] mx-auto px-6 md:px-8">
         
-        {/* Brutal Minimal Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 pb-16 border-b border-[var(--border-subtle)]">
-          <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[var(--text-primary)] tracking-tight mb-4">
-              DRAGON 100™
-            </h2>
-            <p className="text-lg md:text-xl text-[var(--text-secondary)] font-medium">
-              The premier private strategic advisory board for 7 and 8-figure founders dedicated to operational extraction.
+        {/* Top Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-[#18181D] items-start">
+          
+          {/* Brand Col */}
+          <div className="md:col-span-5 space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 border border-[#c5a059] flex items-center justify-center bg-black">
+                <span className="text-[#c5a059] font-serif font-bold text-base italic leading-none">D</span>
+              </div>
+              <span className="text-white font-serif font-bold text-sm tracking-[0.18em] uppercase">
+                DRAGON <span className="text-[#c5a059]">100™</span>
+              </span>
+            </div>
+            <p className="text-xs text-[#80808a] leading-relaxed max-w-sm">
+              The premier private strategic advisory board and software ecosystem for 7 and 8-figure founders dedicated to operational extraction, enterprise equity multiple expansion, and reaching their Certainty Number.
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 min-w-[200px]">
-            <a
-              href="#calculator"
-              className="btn-cobalt-primary text-center w-full"
-            >
-              Apply For Review
-            </a>
-            <p className="text-xs text-[var(--text-muted)] text-center font-mono-accent uppercase tracking-wider">
-              Admissions by vetting only
-            </p>
+          {/* Quick Links */}
+          <div className="md:col-span-3 space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-[0.18em] text-white">
+              Navigation
+            </h4>
+            <ul className="space-y-2 text-xs">
+              <li><a href="#the-lie" className="hover:text-[#c5a059] transition-colors">The Success Prison</a></li>
+              <li><a href="#framework" className="hover:text-[#c5a059] transition-colors">The Three E's</a></li>
+              <li><a href="#calculator" className="hover:text-[#c5a059] transition-colors">Certainty Calculator</a></li>
+              <li><a href="#qualifications" className="hover:text-[#c5a059] transition-colors">Eligibility Criteria</a></li>
+              <li><a href="#process" className="hover:text-[#c5a059] transition-colors">Admissions Protocol</a></li>
+              <li><a href="#faq" className="hover:text-[#c5a059] transition-colors">FAQ</a></li>
+            </ul>
           </div>
+
+          {/* Legal / Contact */}
+          <div className="md:col-span-4 space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-[0.18em] text-white">
+              Boardroom Admissions
+            </h4>
+            <p className="text-xs text-[#80808a] leading-relaxed">
+              Admissions strictly by confidential application and vetting interview only.
+            </p>
+            <div className="pt-2">
+              <a
+                href="#calculator"
+                className="btn-gold-primary text-xs py-2.5 px-5"
+              >
+                Apply For Review
+              </a>
+            </div>
+          </div>
+
         </div>
 
-        {/* Legal Disclaimer Block */}
-        <div className="py-12 border-b border-[var(--border-subtle)] text-[13px] leading-relaxed space-y-4 text-[var(--text-secondary)] max-w-4xl">
-          <div className="flex items-center gap-2 text-[var(--text-primary)] font-bold uppercase tracking-wider text-[11px] font-mono-accent">
-            <Shield size={14} className="text-[var(--accent-cobalt)]" />
+        {/* Legal Disclaimer Block (Standard for High-Ticket Advisory Sites) */}
+        <div className="py-8 border-b border-[#141418] text-[11px] leading-relaxed space-y-3 text-[#52525B]">
+          <div className="flex items-center gap-1.5 text-[#71717A] font-bold uppercase tracking-wider text-[10px]">
+            <Shield size={12} className="text-[#c5a059]" />
             <span>Important Earnings & Legal Disclaimers</span>
           </div>
           <p>
-            We do not believe in get-rich-quick schemes or passive shortcuts. Building a self-managing enterprise and extracting lasting wealth requires rigorous operational discipline, leadership restructuring, and committed execution. As stipulated by law, we cannot and do not make any guarantees about your individual ability to achieve financial results or execute enterprise value multiples.
+            We do not believe in get-rich-quick schemes or passive shortcuts. Building a self-managing enterprise and extracting lasting wealth requires rigorous operational discipline, leadership restructuring, and committed execution. As stipulated by law, we cannot and do not make any guarantees about your individual ability to achieve financial results or execute enterprise value multiples. Your business results depend solely on your execution, market conditions, and operational variables.
           </p>
           <p>
             Any financial calculations, multiples, or milestone case studies referenced on this page are illustrative metrics representing specific member achievements and should not be construed as universal promises or projections of performance.
           </p>
         </div>
 
-        {/* Bottom Strip */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-[13px] font-medium text-[var(--text-muted)]">
-          <p>© {new Date().getFullYear()} Dragon 100™ Global Advisory.</p>
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-            <a href="#" className="hover:text-[var(--accent-cobalt)] transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-[var(--accent-cobalt)] transition-colors">Terms of Advisory</a>
-            <a href="#" className="hover:text-[var(--accent-cobalt)] transition-colors">Confidentiality Agreement</a>
+        {/* Bottom Copyright */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#52525B]">
+          <p>© {new Date().getFullYear()} Dragon 100™ Global Advisory. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <a href="#" className="hover:text-[#c5a059] transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-[#c5a059] transition-colors">Terms of Advisory</a>
+            <a href="#" className="hover:text-[#c5a059] transition-colors">Confidentiality Agreement</a>
           </div>
         </div>
 

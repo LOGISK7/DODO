@@ -39,55 +39,59 @@ export default function PainPoints() {
   ];
 
   return (
-    <div className="w-full">
-      {/* Header */}
-      <div className="max-w-3xl mb-16">
-        <Reveal>
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent-cobalt)] mb-4 font-mono-accent">
-            <AlertCircle className="w-4 h-4" />
-            <span>Diagnostic Assessment</span>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.1}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-[var(--text-primary)] leading-tight mb-6">
-            Have You Built an Asset, Or Did You Accidentally Build a{" "}
-            <span className="text-[var(--accent-cobalt)] block sm:inline">Success Prison?</span>
-          </h2>
-        </Reveal>
-
-        <Reveal delay={0.2}>
-          <p className="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed">
-            If three or more of the following scenarios describe your current week, your business model is optimized for exhaustion rather than extraction.
-          </p>
-        </Reveal>
-      </div>
-
-      {/* 5-Question Pain Points List */}
-      <StaggerContainer staggerDelay={0.12} className="space-y-4">
-        {painPoints.map((item) => (
-          <StaggerItem key={item.number}>
-            <div className="p-6 md:p-8 rounded-xl bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--border-cobalt)] transition-all duration-300 group flex flex-col md:flex-row gap-5 md:gap-8 items-start shadow-sm hover:shadow-md">
-              {/* Number Badge */}
-              <div className="flex-shrink-0">
-                <span className="font-heading font-bold text-2xl md:text-3xl text-[var(--accent-cobalt)] opacity-80 group-hover:opacity-100 transition-opacity">
-                  {item.number}
-                </span>
-              </div>
-
-              {/* Content */}
-              <div className="space-y-2">
-                <h3 className="text-sm md:text-base font-bold font-sans tracking-[0.08em] text-[var(--text-primary)] group-hover:text-[var(--accent-cobalt)] transition-colors">
-                  {item.leadIn}
-                </h3>
-                <p className="text-sm md:text-[15px] text-[var(--text-secondary)] leading-relaxed font-sans">
-                  {item.description}
-                </p>
-              </div>
+    <section className="py-24 md:py-32 bg-[#080808] border-y border-[#18181B] relative">
+      <div className="max-w-[1240px] mx-auto px-6 md:px-8">
+        
+        {/* Header */}
+        <div className="max-w-3xl mb-16">
+          <Reveal>
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-[#c5a059] mb-4">
+              <AlertCircle className="w-4 h-4" />
+              <span>Diagnostic Assessment</span>
             </div>
-          </StaggerItem>
-        ))}
-      </StaggerContainer>
-    </div>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white leading-tight mb-6">
+              Ask Yourself: Have You Built an Asset, Or Did You Accidentally Build a{" "}
+              <span className="font-serif-accent italic gold-gradient-text">Success Prison?</span>
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.2}>
+            <p className="text-base md:text-lg text-[#A1A1AA] leading-relaxed">
+              If three or more of the following scenarios describe your current week, your business model is optimized for exhaustion rather than extraction.
+            </p>
+          </Reveal>
+        </div>
+
+        {/* 5-Question Pain Points List */}
+        <StaggerContainer staggerDelay={0.12} className="space-y-4">
+          {painPoints.map((item) => (
+            <StaggerItem key={item.number}>
+              <div className="p-6 md:p-8 rounded-sm bg-[#111113] border border-[#222226] hover:border-[#c5a059]/50 transition-all duration-300 group flex flex-col md:flex-row gap-5 md:gap-8 items-start">
+                {/* Number Badge */}
+                <div className="flex-shrink-0">
+                  <span className="font-serif font-bold text-2xl md:text-3xl text-[#c5a059] opacity-80 group-hover:opacity-100 transition-opacity">
+                    {item.number}
+                  </span>
+                </div>
+
+                {/* Content */}
+                <div className="space-y-2">
+                  <h3 className="text-sm md:text-base font-bold font-sans tracking-[0.08em] text-white group-hover:text-[#fae19c] transition-colors">
+                    {item.leadIn}
+                  </h3>
+                  <p className="text-sm md:text-[15px] text-[#A1A1AA] leading-relaxed font-sans">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
+
+      </div>
+    </section>
   );
 }
