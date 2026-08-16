@@ -96,10 +96,30 @@
   overflow: hidden;
 }
 
+.btn-gold-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  transition: all 0.75s ease;
+}
+
 .btn-gold-primary:hover {
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(197, 160, 89, 0.4);
   filter: brightness(1.08);
+}
+
+.btn-gold-primary:hover::after {
+  left: 200%;
+}
+
+.btn-gold-primary:active {
+  transform: scale(0.98) translateY(0);
 }
 
 .btn-gold-ghost {
@@ -124,6 +144,10 @@
   color: #000000;
   transform: translateY(-2px);
   box-shadow: 0 6px 25px rgba(197, 160, 89, 0.25);
+}
+
+.btn-gold-ghost:active {
+  transform: scale(0.98) translateY(0);
 }
 
 /* Custom Range Slider for Calculator */

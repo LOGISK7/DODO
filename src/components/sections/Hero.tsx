@@ -1,14 +1,21 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Play, ShieldCheck, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <section className="relative min-h-[95vh] flex flex-col items-center justify-center pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-black">
       {/* Background Ambience / Subtle Top Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-[radial-gradient(ellipse_at_top,rgba(197,160,89,0.15),transparent_70%)] pointer-events-none" />
+      <motion.div 
+        animate={{ opacity: [0.5, 1, 0.5], scale: [0.95, 1.05, 0.95] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-[radial-gradient(ellipse_at_top,rgba(197,160,89,0.15),transparent_70%)] pointer-events-none" 
+      />
       <div className="absolute inset-0 bg-[radial-gradient(#1a1a1e_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
 
       <div className="max-w-[1240px] mx-auto px-6 md:px-8 text-center flex flex-col items-center relative z-10">
@@ -24,12 +31,17 @@ export default function Hero() {
 
         {/* Main Headline */}
         <Reveal delay={0.15}>
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white max-w-[1080px] leading-[1.12] tracking-tight mb-8">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white max-w-[1080px] leading-[1.12] tracking-tight mb-8"
+          >
             Why Almost Everyone Is Dead Wrong About{" "}
             <span className="font-serif-accent italic font-normal gold-gradient-text block sm:inline">
               Building a 7 or 8-Figure Enterprise
             </span>
-          </h1>
+          </motion.h1>
         </Reveal>
 
         {/* Authoritative Subheadline */}
@@ -60,16 +72,30 @@ export default function Hero() {
 
         {/* Featured Video / Summit Trailer Mockup Frame */}
         <Reveal delay={0.45} className="w-full max-w-[960px]">
-          <div className="relative group rounded-sm border border-[#27272a] bg-[#0E0E10] p-2 md:p-3 shadow-2xl transition-all duration-500 hover:border-[#c5a059]/60">
+          <div 
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="relative group rounded-sm border border-[#27272a] bg-[#0E0E10] p-2 md:p-3 shadow-2xl transition-all duration-500 hover:border-[#c5a059]/60 cursor-pointer"
+          >
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm bg-[#050505] flex items-center justify-center">
               {/* Subtle visual backdrop */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
+              <motion.div 
+                animate={{ opacity: isHovered ? 0.7 : 1 }}
+                className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10 transition-opacity duration-500" 
+              />
               
               <div className="relative z-20 text-center flex flex-col items-center px-6">
                 {/* Play Button */}
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#c5a059] flex items-center justify-center text-black shadow-[0_0_35px_rgba(197,160,89,0.5)] group-hover:scale-110 transition-transform duration-300 mb-4 cursor-pointer">
+                <motion.div 
+                  animate={{ 
+                    scale: isHovered ? 1.15 : 1,
+                    boxShadow: isHovered ? "0 0 50px rgba(197,160,89,0.8)" : "0 0 35px rgba(197,160,89,0.5)"
+                  }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#c5a059] flex items-center justify-center text-black mb-4"
+                >
                   <Play className="w-7 h-7 md:w-8 md:h-8 fill-black ml-1 text-black" />
-                </div>
+                </motion.div>
                 <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[#c5a059] mb-1">
                   Private Boardroom Intelligence Briefing
                 </p>

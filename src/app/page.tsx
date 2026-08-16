@@ -13,10 +13,11 @@ import ProcessTimeline from "@/components/sections/ProcessTimeline";
 import FounderBio from "@/components/sections/FounderBio";
 import FAQAccordion from "@/components/sections/FAQAccordion";
 import Footer from "@/components/sections/Footer";
+import { BentoCard } from "@/components/ui/BentoCard";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-[#EDEDED] flex flex-col">
+    <div className="min-h-screen bg-black text-[#EDEDED] flex flex-col selection:bg-[#c5a059] selection:text-black">
       {/* N1b Canonical SaaS Navigation */}
       <Navbar />
 
@@ -28,29 +29,29 @@ export default function Home() {
 
         {/* Bento Grid: Modular blocks of varying sizes */}
         <section className="bento max-w-7xl mx-auto w-full px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          <article className="cell col-span-1 md:col-span-2 lg:col-span-4 bg-[#111] rounded-2xl overflow-hidden p-6 md:p-10 border border-[rgba(255,255,255,0.08)]">
+          <BentoCard delay={0.1} className="col-span-1 md:col-span-2 lg:col-span-4 p-6 md:p-10">
             <PainPoints />
-          </article>
+          </BentoCard>
           
-          <article className="cell col-span-1 lg:col-span-2 bg-[#111] rounded-2xl overflow-hidden p-6 border border-[rgba(255,255,255,0.08)]">
+          <BentoCard delay={0.2} className="col-span-1 lg:col-span-2 p-6">
             <InteractiveCalculator />
-          </article>
+          </BentoCard>
           
-          <article className="cell col-span-1 lg:col-span-2 bg-[#111] rounded-2xl overflow-hidden p-6 border border-[rgba(255,255,255,0.08)]">
+          <BentoCard delay={0.3} className="col-span-1 lg:col-span-2 p-6">
             <FrameworkThreeEs />
-          </article>
+          </BentoCard>
           
           <article className="cell col-span-1 md:col-span-2 lg:col-span-4 bg-transparent py-10">
             <ProofWall />
           </article>
           
-          <article className="cell col-span-1 md:col-span-2 bg-[#111] rounded-2xl overflow-hidden p-6 border border-[rgba(255,255,255,0.08)]">
+          <BentoCard delay={0.4} className="col-span-1 md:col-span-2 p-6">
             <TestimonialsCarouselOne />
-          </article>
+          </BentoCard>
 
-          <article className="cell col-span-1 md:col-span-2 bg-[#111] rounded-2xl overflow-hidden p-6 border border-[rgba(255,255,255,0.08)]">
+          <BentoCard delay={0.5} className="col-span-1 md:col-span-2 p-6">
             <Qualifications />
-          </article>
+          </BentoCard>
         </section>
 
         {/* Long Form / Narrative Flow below the fold */}
