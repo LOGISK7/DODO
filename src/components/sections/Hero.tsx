@@ -9,61 +9,56 @@ export default function Hero() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <section className="relative min-h-[95vh] flex flex-col items-center justify-center pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-black">
-      {/* Background Ambience / Subtle Top Glow */}
-      <motion.div 
-        animate={{ opacity: [0.5, 1, 0.5], scale: [0.95, 1.05, 0.95] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-[radial-gradient(ellipse_at_top,rgba(197,160,89,0.15),transparent_70%)] pointer-events-none" 
-      />
-      <div className="absolute inset-0 bg-[radial-gradient(#1a1a1e_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
+    <section className="relative min-h-[95vh] flex flex-col items-center justify-center pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-[var(--bg-primary)]">
+      {/* Background Ambience / Sharp grid lines instead of floaty glow */}
+      <div className="absolute inset-0 bg-[linear-gradient(var(--border-subtle)_1px,transparent_1px),linear-gradient(90deg,var(--border-subtle)_1px,transparent_1px)] [background-size:48px_48px] opacity-40 pointer-events-none" />
 
       <div className="max-w-[1240px] mx-auto px-6 md:px-8 text-center flex flex-col items-center relative z-10">
-        {/* Eyebrow Badge */}
+        {/* Eyebrow Badge - Sharp, brutalist */}
         <Reveal delay={0.05}>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#161616] border border-[#c5a059]/30 mb-8 shadow-[0_0_20px_rgba(197,160,89,0.12)]">
-            <Sparkles className="w-3.5 h-3.5 text-[#c5a059]" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#c5a059] font-sans">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--bg-card)] editorial-border mb-8">
+            <Sparkles className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--text-primary)] font-sans">
               Strictly Capped at 100 Founders Worldwide
             </span>
           </div>
         </Reveal>
 
-        {/* Main Headline */}
+        {/* Main Headline - Massive Editorial Typography */}
         <Reveal delay={0.15}>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white max-w-[1080px] leading-[1.12] tracking-tight mb-8"
+            className="text-huge font-heading font-bold text-[var(--text-primary)] max-w-[1080px] mb-8 uppercase"
           >
             Why Almost Everyone Is Dead Wrong About{" "}
-            <span className="font-serif-accent italic font-normal gold-gradient-text block sm:inline">
-              Building a 7 or 8-Figure Enterprise
+            <span className="italic font-normal text-[var(--accent-primary)] block sm:inline normal-case">
+              Building a 7-Figure Enterprise
             </span>
           </motion.h1>
         </Reveal>
 
         {/* Authoritative Subheadline */}
         <Reveal delay={0.25}>
-          <p className="text-base sm:text-lg md:text-xl text-[#A1A1AA] max-w-[840px] leading-relaxed font-sans font-normal mb-12">
+          <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] max-w-[840px] leading-relaxed font-sans font-normal mb-12">
             And the brutal reality of how the high-revenue machine you forged to set you free became an all-consuming{" "}
-            <span className="text-white font-medium">“Success Prison”</span> that drains your life, binds your attention, and prevents true equity extraction.
+            <strong className="text-[var(--text-primary)] font-semibold">“Success Prison”</strong> that drains your life, binds your attention, and prevents true equity extraction.
           </p>
         </Reveal>
 
-        {/* Dual CTAs */}
+        {/* Dual CTAs - Sharp brutalist buttons */}
         <Reveal delay={0.35}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-[560px] mb-16">
             <a
               href="#calculator"
-              className="btn-gold-primary w-full sm:w-auto flex-1 text-center"
+              className="btn-brutal-primary w-full sm:w-auto flex-1 text-center"
             >
               Calculate Your Certainty Number
             </a>
             <a
               href="#the-lie"
-              className="btn-gold-ghost w-full sm:w-auto flex-1 text-center"
+              className="btn-brutal-ghost w-full sm:w-auto flex-1 text-center"
             >
               Discover The Framework
             </a>
@@ -75,46 +70,41 @@ export default function Hero() {
           <div 
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="relative group rounded-sm border border-[#27272a] bg-[#0E0E10] p-2 md:p-3 shadow-2xl transition-all duration-500 hover:border-[#c5a059]/60 cursor-pointer"
+            className="relative group bg-[var(--bg-card)] p-2 md:p-3 editorial-border transition-all duration-300 hover:bg-[var(--bg-secondary)] cursor-pointer"
           >
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm bg-[#050505] flex items-center justify-center">
-              {/* Subtle visual backdrop */}
-              <motion.div 
-                animate={{ opacity: isHovered ? 0.7 : 1 }}
-                className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10 transition-opacity duration-500" 
-              />
+            <div className="relative aspect-[16/9] w-full overflow-hidden bg-[var(--bg-secondary)] editorial-border flex items-center justify-center">
               
               <div className="relative z-20 text-center flex flex-col items-center px-6">
-                {/* Play Button */}
+                {/* Play Button - Red, sharp */}
                 <motion.div 
                   animate={{ 
-                    scale: isHovered ? 1.15 : 1,
-                    boxShadow: isHovered ? "0 0 50px rgba(197,160,89,0.8)" : "0 0 35px rgba(197,160,89,0.5)"
+                    scale: isHovered ? 1.05 : 1,
+                    backgroundColor: isHovered ? "var(--text-primary)" : "var(--accent-primary)"
                   }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#c5a059] flex items-center justify-center text-black mb-4"
+                  className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center text-white mb-4 editorial-border"
                 >
-                  <Play className="w-7 h-7 md:w-8 md:h-8 fill-black ml-1 text-black" />
+                  <Play className="w-7 h-7 md:w-8 md:h-8 fill-white ml-1 text-white" />
                 </motion.div>
-                <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[#c5a059] mb-1">
+                <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[var(--text-primary)] mb-1">
                   Private Boardroom Intelligence Briefing
                 </p>
-                <p className="text-sm md:text-base text-white/90 font-serif max-w-lg">
+                <p className="text-sm md:text-base text-[var(--text-secondary)] font-serif max-w-lg italic">
                   “The Mechanics of Operational Extraction & Autonomous Scale”
                 </p>
               </div>
 
-              {/* Gold Accent Corner Markers */}
-              <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-[#c5a059] z-20" />
-              <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-[#c5a059] z-20" />
-              <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-[#c5a059] z-20" />
-              <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-[#c5a059] z-20" />
+              {/* Crosshair Accent Corner Markers */}
+              <div className="absolute top-0 left-0 w-8 h-8 border-r border-b border-[var(--border-strong)] z-20 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-8 h-8 border-l border-b border-[var(--border-strong)] z-20 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-8 h-8 border-r border-t border-[var(--border-strong)] z-20 pointer-events-none" />
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-l border-t border-[var(--border-strong)] z-20 pointer-events-none" />
             </div>
 
             {/* Bottom trust bar */}
-            <div className="mt-3 py-2 px-4 flex flex-wrap items-center justify-between text-xs text-[#71717A] border-t border-[#1C1C20]">
-              <span className="flex items-center gap-1.5 text-[#D4D4D8]">
-                <ShieldCheck className="w-4 h-4 text-[#c5a059]" /> Closed-Door Private Advisory
+            <div className="mt-3 py-2 px-4 flex flex-wrap items-center justify-between text-xs font-sans font-bold uppercase tracking-wider text-[var(--text-secondary)] editorial-border-t">
+              <span className="flex items-center gap-1.5 text-[var(--text-primary)]">
+                <ShieldCheck className="w-4 h-4 text-[var(--accent-primary)]" /> Closed-Door Private Advisory
               </span>
               <span>100 Founding Members Worldwide</span>
             </div>
