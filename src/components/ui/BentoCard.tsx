@@ -23,7 +23,7 @@ export function BentoCard({ children, className, delay = 0, ...props }: BentoCar
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
-        "group relative bg-[var(--bg-card)] editorial-border overflow-hidden transition-all duration-300 hover:bg-[var(--bg-card-elevated)]",
+        "group relative bg-[var(--bg-card)] hud-border hud-glass overflow-hidden transition-all duration-300",
         className
       )}
       {...props}

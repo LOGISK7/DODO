@@ -17,7 +17,7 @@ import { BentoCard } from "@/components/ui/BentoCard";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col selection:bg-[var(--text-primary)] selection:text-[var(--bg-primary)]">
+    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col selection:bg-[var(--accent-primary)] selection:text-[#000]">
       {/* N1b Canonical SaaS Navigation */}
       <Navbar />
 
@@ -27,8 +27,8 @@ export default function Home() {
           <Hero />
         </header>
 
-        {/* Editorial Grid: Modular blocks of varying sizes */}
-        <section className="editorial-grid max-w-7xl mx-auto w-full px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        {/* HUD Grid: Modular glass panels */}
+        <section className="hud-grid max-w-7xl mx-auto w-full px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 relative z-10">
           <BentoCard delay={0.1} className="col-span-1 md:col-span-2 lg:col-span-4 p-6 md:p-10">
             <PainPoints />
           </BentoCard>

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { Play, ShieldCheck, Sparkles } from "lucide-react";
+import { Play, ShieldCheck, Cpu } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -10,103 +10,119 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[95vh] flex flex-col items-center justify-center pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-[var(--bg-primary)]">
-      {/* Background Ambience / Sharp grid lines instead of floaty glow */}
-      <div className="absolute inset-0 bg-[linear-gradient(var(--border-subtle)_1px,transparent_1px),linear-gradient(90deg,var(--border-subtle)_1px,transparent_1px)] [background-size:48px_48px] opacity-40 pointer-events-none" />
+      {/* HUD Background Ambience */}
+      <div className="absolute inset-0 bg-[linear-gradient(var(--border-subtle)_1px,transparent_1px),linear-gradient(90deg,var(--border-subtle)_1px,transparent_1px)] [background-size:64px_64px] opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,240,255,0.05)_0%,transparent_60%)] pointer-events-none" />
+
+      {/* Cybernetic Grid Overlay */}
+      <div className="absolute top-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--accent-primary)] to-transparent opacity-50" />
 
       <div className="max-w-[1240px] mx-auto px-6 md:px-8 text-center flex flex-col items-center relative z-10">
-        {/* Eyebrow Badge - Sharp, brutalist */}
+        
+        {/* HUD Eyebrow Badge */}
         <Reveal delay={0.05}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--bg-card)] editorial-border mb-8">
-            <Sparkles className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--text-primary)] font-sans">
-              Strictly Capped at 100 Founders Worldwide
+          <div className="inline-flex items-center gap-3 px-5 py-2 bg-[var(--bg-card)] hud-border hud-glass mb-8 relative">
+            <Cpu className="w-4 h-4 text-[var(--accent-primary)]" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--accent-primary)] font-mono">
+              System Cap: 100 Nodes Online
             </span>
+            <div className="absolute top-0 right-0 w-2 h-2 bg-[var(--accent-primary)] animate-pulse" />
           </div>
         </Reveal>
 
-        {/* Main Headline - Massive Editorial Typography */}
+        {/* Main Headline - Glitching HUD Text */}
         <Reveal delay={0.15}>
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-huge font-heading font-bold text-[var(--text-primary)] max-w-[1080px] mb-8 uppercase"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 100 }}
+            className="text-huge font-heading font-bold text-[var(--text-primary)] max-w-[1080px] mb-8"
           >
-            Why Almost Everyone Is Dead Wrong About{" "}
-            <span className="italic font-normal text-[var(--accent-primary)] block sm:inline normal-case">
+            Why Everyone Is Dead Wrong About{" "}
+            <span className="text-neon block sm:inline">
               Building a 7-Figure Enterprise
             </span>
           </motion.h1>
         </Reveal>
 
-        {/* Authoritative Subheadline */}
+        {/* Authoritative Subheadline - Data Readout Style */}
         <Reveal delay={0.25}>
-          <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] max-w-[840px] leading-relaxed font-sans font-normal mb-12">
-            And the brutal reality of how the high-revenue machine you forged to set you free became an all-consuming{" "}
-            <strong className="text-[var(--text-primary)] font-semibold">“Success Prison”</strong> that drains your life, binds your attention, and prevents true equity extraction.
-          </p>
+          <div className="relative mb-12">
+            <span className="absolute -left-6 top-0 text-[10px] text-[var(--accent-primary)] font-mono opacity-50">[LOG_INIT]</span>
+            <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] max-w-[840px] leading-relaxed font-mono">
+              The brutal reality of how the high-revenue machine you forged became an all-consuming <strong className="text-[var(--text-primary)]">“Success Prison”</strong> that drains your life and prevents true equity extraction.
+            </p>
+          </div>
         </Reveal>
 
-        {/* Dual CTAs - Sharp brutalist buttons */}
+        {/* Dual CTAs - Cyber Buttons */}
         <Reveal delay={0.35}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-[560px] mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-[560px] mb-16 relative">
+            <div className="absolute -left-12 top-1/2 w-8 h-[1px] bg-[var(--accent-primary)] opacity-30" />
+            <div className="absolute -right-12 top-1/2 w-8 h-[1px] bg-[var(--accent-primary)] opacity-30" />
+            
             <a
               href="#calculator"
-              className="btn-brutal-primary w-full sm:w-auto flex-1 text-center"
+              className="btn-cyber-primary w-full sm:w-auto flex-1 text-center"
             >
-              Calculate Your Certainty Number
+              Init Extraction Calc
             </a>
             <a
               href="#the-lie"
-              className="btn-brutal-ghost w-full sm:w-auto flex-1 text-center"
+              className="btn-cyber-ghost w-full sm:w-auto flex-1 text-center"
             >
-              Discover The Framework
+              Access Data Frame
             </a>
           </div>
         </Reveal>
 
-        {/* Featured Video / Summit Trailer Mockup Frame */}
+        {/* Featured Video / HUD Media Frame */}
         <Reveal delay={0.45} className="w-full max-w-[960px]">
           <div 
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="relative group bg-[var(--bg-card)] p-2 md:p-3 editorial-border transition-all duration-300 hover:bg-[var(--bg-secondary)] cursor-pointer"
+            className="relative group bg-[var(--bg-card)] p-1 hud-border hud-glass cursor-pointer"
           >
-            <div className="relative aspect-[16/9] w-full overflow-hidden bg-[var(--bg-secondary)] editorial-border flex items-center justify-center">
+            {/* Top scanning line effect */}
+            <motion.div 
+              animate={{ y: ["0%", "100%", "0%"] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+              className="absolute left-0 right-0 h-[2px] bg-[var(--accent-primary)] shadow-[0_0_15px_var(--accent-primary)] opacity-20 z-30 pointer-events-none"
+            />
+
+            <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#000] flex items-center justify-center border border-[var(--border-subtle)]">
               
               <div className="relative z-20 text-center flex flex-col items-center px-6">
-                {/* Play Button - Red, sharp */}
                 <motion.div 
                   animate={{ 
                     scale: isHovered ? 1.05 : 1,
-                    backgroundColor: isHovered ? "var(--text-primary)" : "var(--accent-primary)"
+                    borderColor: isHovered ? "var(--accent-primary)" : "rgba(0, 240, 255, 0.4)"
                   }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center text-white mb-4 editorial-border"
+                  className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center border-2 border-[var(--border-subtle)] mb-4 bg-black/50 hud-glass"
                 >
-                  <Play className="w-7 h-7 md:w-8 md:h-8 fill-white ml-1 text-white" />
+                  <Play className="w-6 h-6 md:w-8 md:h-8 fill-none text-[var(--accent-primary)] ml-1" strokeWidth={2} />
                 </motion.div>
-                <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[var(--text-primary)] mb-1">
-                  Private Boardroom Intelligence Briefing
+                <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] text-[var(--accent-primary)] mb-2 font-mono">
+                  [ENCRYPTED_STREAM_01]
                 </p>
-                <p className="text-sm md:text-base text-[var(--text-secondary)] font-serif max-w-lg italic">
+                <p className="text-sm md:text-base text-[var(--text-primary)] font-mono max-w-lg opacity-80">
                   “The Mechanics of Operational Extraction & Autonomous Scale”
                 </p>
               </div>
 
-              {/* Crosshair Accent Corner Markers */}
-              <div className="absolute top-0 left-0 w-8 h-8 border-r border-b border-[var(--border-strong)] z-20 pointer-events-none" />
-              <div className="absolute top-0 right-0 w-8 h-8 border-l border-b border-[var(--border-strong)] z-20 pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-8 h-8 border-r border-t border-[var(--border-strong)] z-20 pointer-events-none" />
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-l border-t border-[var(--border-strong)] z-20 pointer-events-none" />
+              {/* HUD Crosshairs */}
+              <div className="absolute top-2 left-2 w-4 h-4 border-l border-t border-[var(--accent-primary)] z-20 pointer-events-none" />
+              <div className="absolute top-2 right-2 w-4 h-4 border-r border-t border-[var(--accent-primary)] z-20 pointer-events-none" />
+              <div className="absolute bottom-2 left-2 w-4 h-4 border-l border-b border-[var(--accent-primary)] z-20 pointer-events-none" />
+              <div className="absolute bottom-2 right-2 w-4 h-4 border-r border-b border-[var(--accent-primary)] z-20 pointer-events-none" />
             </div>
 
-            {/* Bottom trust bar */}
-            <div className="mt-3 py-2 px-4 flex flex-wrap items-center justify-between text-xs font-sans font-bold uppercase tracking-wider text-[var(--text-secondary)] editorial-border-t">
-              <span className="flex items-center gap-1.5 text-[var(--text-primary)]">
-                <ShieldCheck className="w-4 h-4 text-[var(--accent-primary)]" /> Closed-Door Private Advisory
+            {/* Bottom Tech Bar */}
+            <div className="mt-1 py-2 px-4 flex flex-wrap items-center justify-between text-[10px] font-mono uppercase tracking-widest text-[var(--accent-primary)] bg-black/40 border border-[var(--border-subtle)]">
+              <span className="flex items-center gap-2">
+                <ShieldCheck className="w-3 h-3" /> Secure Protocol
               </span>
-              <span>100 Founding Members Worldwide</span>
+              <span>Uplink: Active</span>
             </div>
           </div>
         </Reveal>

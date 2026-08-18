@@ -1,26 +1,28 @@
 @import "tailwindcss";
 
-/* Hallmark · genre: editorial brutalism · theme: custom (off-white / charcoal / vermilion) */
+/* Hallmark · genre: neo-cybernetic · theme: custom (void black / electric cyan) */
 
 @layer base {
   :root {
-    --bg-primary: #F4F2EC;
-    --bg-secondary: #EAE8E3;
-    --bg-card: #FFFFFF;
-    --bg-card-elevated: #F9F8F5;
+    --bg-primary: #030305;
+    --bg-secondary: #0A0A10;
+    --bg-card: rgba(10, 10, 16, 0.4);
+    --bg-card-elevated: rgba(10, 10, 16, 0.8);
 
-    --accent-primary: #FF331F;
-    --accent-hover: #D02414;
+    --accent-primary: #00F0FF;
+    --accent-hover: #5CFFFF;
+    --accent-glow: rgba(0, 240, 255, 0.35);
     
-    --border-subtle: #D8D6D1;
-    --border-strong: #111111;
+    --border-subtle: rgba(0, 240, 255, 0.15);
+    --border-strong: rgba(0, 240, 255, 0.4);
 
-    --text-primary: #111111;
-    --text-secondary: #4A4A4A;
-    --text-muted: #737373;
+    --text-primary: #E0E7FF;
+    --text-secondary: #8B949E;
+    --text-muted: #4B5563;
 
+    --font-display: "Orbitron", "Space Grotesk", system-ui, sans-serif;
     --font-sans: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-serif: var(--font-newsreader), "Newsreader", "Instrument Serif", "Times New Roman", serif;
+    --font-mono: "JetBrains Mono", "Space Mono", "Courier New", monospace;
   }
 
   body {
@@ -33,144 +35,155 @@
 
   h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary);
-    font-family: var(--font-serif);
-    letter-spacing: -0.02em;
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 }
 
 @layer utilities {
   .font-heading {
-    font-family: var(--font-serif);
+    font-family: var(--font-display);
   }
 
-  .font-sans-accent {
-    font-family: var(--font-sans);
-    letter-spacing: -0.01em;
+  .font-mono-accent {
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
   }
 
-  /* Sharp borders for editorial look */
-  .editorial-border {
-    border: 1px solid var(--border-strong);
+  /* HUD Borders */
+  .hud-border {
+    border: 1px solid var(--border-subtle);
+    box-shadow: inset 0 0 20px rgba(0, 240, 255, 0.02);
   }
   
-  .editorial-border-b {
-    border-bottom: 1px solid var(--border-strong);
+  .hud-border:hover {
+    border-color: var(--border-strong);
+    box-shadow: inset 0 0 20px rgba(0, 240, 255, 0.05), 0 0 15px var(--accent-glow);
   }
-  
-  .editorial-border-t {
-    border-top: 1px solid var(--border-strong);
+
+  .hud-glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
-  
-  .editorial-border-x {
-    border-left: 1px solid var(--border-strong);
-    border-right: 1px solid var(--border-strong);
+
+  /* Neon Glow Text */
+  .text-neon {
+    color: var(--accent-primary);
+    text-shadow: 0 0 10px var(--accent-glow), 0 0 20px var(--accent-glow);
   }
 
   /* For massive hero text */
   .text-huge {
-    font-size: clamp(3.5rem, 8vw, 8rem);
-    line-height: 0.95;
-    letter-spacing: -0.03em;
+    font-size: clamp(2.5rem, 6vw, 6rem);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
   }
 }
 
-/* Brutalist Custom Components */
-.btn-brutal-primary {
+/* Cybernetic Custom Components */
+.btn-cyber-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--text-primary);
-  color: var(--bg-primary);
-  font-family: var(--font-sans);
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--accent-primary);
+  font-family: var(--font-mono);
   font-weight: 600;
   font-size: 0.875rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 1rem 2rem;
-  border: 1px solid var(--text-primary);
-  transition: all 0.15s ease-out;
+  border: 1px solid var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-glow);
+  transition: all 0.2s ease-out;
   position: relative;
   overflow: hidden;
-  border-radius: 0; /* Zero border radius */
+  border-radius: 0;
 }
 
-.btn-brutal-primary:hover {
+.btn-cyber-primary:hover {
   background: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: #ffffff;
+  color: #000;
+  box-shadow: 0 0 20px var(--accent-glow), 0 0 40px var(--accent-glow);
 }
 
-.btn-brutal-primary:active {
-  transform: translateY(2px);
+.btn-cyber-primary:active {
+  transform: scale(0.98);
 }
 
-.btn-brutal-ghost {
+.btn-cyber-ghost {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: transparent;
-  border: 1px solid var(--text-primary);
+  border: 1px solid var(--border-strong);
   color: var(--text-primary);
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 600;
   font-size: 0.875rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 1rem 2rem;
   border-radius: 0;
-  transition: all 0.15s ease-out;
+  transition: all 0.2s ease-out;
 }
 
-.btn-brutal-ghost:hover {
-  background: var(--text-primary);
-  color: var(--bg-primary);
+.btn-cyber-ghost:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: rgba(0, 240, 255, 0.05);
+  box-shadow: 0 0 15px var(--accent-glow);
 }
 
-.btn-brutal-ghost:active {
-  transform: translateY(2px);
+.btn-cyber-ghost:active {
+  transform: scale(0.98);
 }
 
 /* Custom Range Slider */
-input[type="range"].editorial-slider {
+input[type="range"].cyber-slider {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
   height: 2px;
-  background: var(--border-strong);
+  background: var(--border-subtle);
   outline: none;
   cursor: pointer;
 }
 
-input[type="range"].editorial-slider::-webkit-slider-thumb {
+input[type="range"].cyber-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 16px;
-  height: 32px;
+  width: 12px;
+  height: 24px;
   background: var(--accent-primary);
-  border: 1px solid var(--border-strong);
+  box-shadow: 0 0 10px var(--accent-primary);
   cursor: grab;
-  transition: background 0.15s ease;
+  transition: all 0.15s ease;
+  clip-path: polygon(0 0, 100% 25%, 100% 75%, 0 100%);
 }
 
-input[type="range"].editorial-slider::-webkit-slider-thumb:hover {
-  background: var(--text-primary);
+input[type="range"].cyber-slider::-webkit-slider-thumb:hover {
+  background: #FFF;
+  box-shadow: 0 0 15px var(--accent-primary), 0 0 25px var(--accent-primary);
 }
 
-input[type="range"].editorial-slider::-webkit-slider-thumb:active {
+input[type="range"].cyber-slider::-webkit-slider-thumb:active {
   cursor: grabbing;
 }
 
-/* Smooth custom scrollbar - Editorial */
+/* Smooth custom scrollbar - Cyber */
 ::-webkit-scrollbar {
-  width: 10px;
-  border-left: 1px solid var(--border-subtle);
-}
-::-webkit-scrollbar-track {
+  width: 6px;
   background: var(--bg-primary);
 }
+::-webkit-scrollbar-track {
+  background: rgba(0, 240, 255, 0.02);
+}
 ::-webkit-scrollbar-thumb {
-  background: var(--border-strong);
+  background: var(--border-subtle);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-primary);
 }
