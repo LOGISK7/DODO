@@ -22,8 +22,8 @@ export default function Home() {
       <Navbar />
 
       <main className="flex-grow flex flex-col gap-12 lg:gap-24 mb-24">
-        {/* Fixed-height hero with centered display */}
-        <header className="hero-fixed min-h-[70vh] flex flex-col items-center justify-center text-center px-4 pt-24">
+        {/* Scroll-driven expansion hero */}
+        <header className="w-full">
           <Hero />
         </header>
 
