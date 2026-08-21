@@ -74,6 +74,14 @@ const MediaContent = ({ mediaType }: { mediaType: 'video' | 'image' }) => {
   );
 };
 
+const getHeaderContent = (currentMedia: MediaContent) => (
+  <div className="flex flex-col items-center justify-center text-center pt-32 px-4 pointer-events-none">
+    <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{currentMedia.title}</h1>
+    <p className="text-xl md:text-2xl text-blue-200 mb-8">{currentMedia.date}</p>
+    <p className="text-sm md:text-base text-gray-400 font-medium tracking-widest uppercase">{currentMedia.scrollToExpand}</p>
+  </div>
+);
+
 export const VideoExpansionTextBlend = () => {
   const mediaType = 'video';
   const currentMedia = sampleMediaContent[mediaType];
@@ -86,16 +94,12 @@ export const VideoExpansionTextBlend = () => {
   }, []);
 
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen bg-black'>
       <ScrollExpandMedia
         mediaType={mediaType}
         mediaSrc={currentMedia.src}
         posterSrc={currentMedia.poster}
-        bgImageSrc={currentMedia.background}
-        title={currentMedia.title}
-        date={currentMedia.date}
-        scrollToExpand={currentMedia.scrollToExpand}
-        textBlend
+        headerContent={getHeaderContent(currentMedia)}
       >
         <MediaContent mediaType={mediaType} />
       </ScrollExpandMedia>
@@ -115,15 +119,11 @@ export const ImageExpansionTextBlend = () => {
   }, []);
 
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen bg-black'>
       <ScrollExpandMedia
         mediaType={mediaType}
         mediaSrc={currentMedia.src}
-        bgImageSrc={currentMedia.background}
-        title={currentMedia.title}
-        date={currentMedia.date}
-        scrollToExpand={currentMedia.scrollToExpand}
-        textBlend
+        headerContent={getHeaderContent(currentMedia)}
       >
         <MediaContent mediaType={mediaType} />
       </ScrollExpandMedia>
@@ -143,15 +143,12 @@ export const VideoExpansion = () => {
   }, []);
 
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen bg-black'>
       <ScrollExpandMedia
         mediaType={mediaType}
         mediaSrc={currentMedia.src}
         posterSrc={currentMedia.poster}
-        bgImageSrc={currentMedia.background}
-        title={currentMedia.title}
-        date={currentMedia.date}
-        scrollToExpand={currentMedia.scrollToExpand}
+        headerContent={getHeaderContent(currentMedia)}
       >
         <MediaContent mediaType={mediaType} />
       </ScrollExpandMedia>
@@ -171,14 +168,11 @@ export const ImageExpansion = () => {
   }, []);
 
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen bg-black'>
       <ScrollExpandMedia
         mediaType={mediaType}
         mediaSrc={currentMedia.src}
-        bgImageSrc={currentMedia.background}
-        title={currentMedia.title}
-        date={currentMedia.date}
-        scrollToExpand={currentMedia.scrollToExpand}
+        headerContent={getHeaderContent(currentMedia)}
       >
         <MediaContent mediaType={mediaType} />
       </ScrollExpandMedia>
@@ -198,7 +192,7 @@ const Demo = () => {
   }, [mediaType]);
 
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen bg-black'>
       <div className='fixed top-4 right-4 z-50 flex gap-2'>
         <button
           onClick={() => setMediaType('video')}
@@ -227,10 +221,7 @@ const Demo = () => {
         mediaType={mediaType as 'video' | 'image'}
         mediaSrc={currentMedia.src}
         posterSrc={mediaType === 'video' ? currentMedia.poster : undefined}
-        bgImageSrc={currentMedia.background}
-        title={currentMedia.title}
-        date={currentMedia.date}
-        scrollToExpand={currentMedia.scrollToExpand}
+        headerContent={getHeaderContent(currentMedia)}
       >
         <MediaContent mediaType={mediaType as 'video' | 'image'} />
       </ScrollExpandMedia>
