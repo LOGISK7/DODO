@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { ArrowRight, ChevronRight, Menu, X, Github, Figma, Dribbble, Twitter, Twitch, Trello, Codepen, Slack } from 'lucide-react'
+import { ArrowRight, ChevronRight, Menu, X, Globe, Code, Cloud, Terminal, Cpu, Database, Server, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { cn } from '@/lib/utils'
@@ -17,7 +17,7 @@ const transitionVariants = {
             filter: 'blur(0px)',
             y: 0,
             transition: {
-                type: 'spring',
+                type: 'spring' as const,
                 bounce: 0.3,
                 duration: 1.5,
             },
@@ -57,7 +57,7 @@ export function HeroSection() {
                                         opacity: 1,
                                         y: 0,
                                         transition: {
-                                            type: 'spring',
+                                            type: 'spring' as const,
                                             bounce: 0.3,
                                             duration: 2,
                                         },
@@ -193,14 +193,14 @@ export function HeroSection() {
                             </Link>
                         </div>
                         <div className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
-                            <div className="flex justify-center text-muted-foreground"><Github className="h-6 w-auto" /></div>
-                            <div className="flex justify-center text-muted-foreground"><Figma className="h-6 w-auto" /></div>
-                            <div className="flex justify-center text-muted-foreground"><Dribbble className="h-6 w-auto" /></div>
-                            <div className="flex justify-center text-muted-foreground"><Twitter className="h-6 w-auto" /></div>
-                            <div className="flex justify-center text-muted-foreground"><Twitch className="h-6 w-auto" /></div>
-                            <div className="flex justify-center text-muted-foreground"><Trello className="h-6 w-auto" /></div>
-                            <div className="flex justify-center text-muted-foreground"><Codepen className="h-6 w-auto" /></div>
-                            <div className="flex justify-center text-muted-foreground"><Slack className="h-6 w-auto" /></div>
+                            <div className="flex justify-center text-muted-foreground"><Globe className="h-6 w-auto" /></div>
+                            <div className="flex justify-center text-muted-foreground"><Code className="h-6 w-auto" /></div>
+                            <div className="flex justify-center text-muted-foreground"><Cloud className="h-6 w-auto" /></div>
+                            <div className="flex justify-center text-muted-foreground"><Terminal className="h-6 w-auto" /></div>
+                            <div className="flex justify-center text-muted-foreground"><Cpu className="h-6 w-auto" /></div>
+                            <div className="flex justify-center text-muted-foreground"><Database className="h-6 w-auto" /></div>
+                            <div className="flex justify-center text-muted-foreground"><Server className="h-6 w-auto" /></div>
+                            <div className="flex justify-center text-muted-foreground"><Zap className="h-6 w-auto" /></div>
                         </div>
                     </div>
                 </section>
